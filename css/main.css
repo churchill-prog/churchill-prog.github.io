@@ -233,6 +233,84 @@ main#home h1 {
 	padding: 0.5rem;
 	border-bottom: #8BC34A 5px solid;
 }
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem;
+}
+
+.projects img{
+  width: 100%;
+  border: 3px solid #fff;
+}
+
+.projects img:hover{
+  opacity: 0.5;
+  border-color: #8BC34A;
+  transition: 0.4s ease-out;
+}
+
+.btn{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+}
+
+.btn:hover{
+  background: #8BC34A;
+  color: #fff;
+}
+
+.btn-light{
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+}
+
+.btn-light:hover{
+  background: #8BC34A;
+  color: #fff;
+}
+
+.boxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.boxes div{
+  font-size: 2rem;
+  border: 3px solid #fff;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+  transition: 0.4s ease-out;
+  cursor: pointer;
+}
+
+.boxes div:hover{
+  padding: 0.5rem 1.5rem;
+  background:  #8BC34A;
+  color: #fff;
+}
+
+.boxes div span:hover{
+  color: #000;
+}
+
+#main-footer{
+  text-align: center;
+  padding: 1rem;
+  background:  #535151;
+  color: rgba(68, 68, 68, 0.9);
+  height: 60px;
+}
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -303,9 +381,14 @@ main#home h1 {
 	  "job1"
 	  "job2"
 	  "job3";
-	grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  }
+  .projects{
+    grid-template-columns: repeat(2, 1fr)
+  }
 }
-@media screen (min-width:769) and (max-width: 1170px) {
+
+@media screen and (min-width:769) and (max-width: 1170px) {
   main #home h1 {
     margin-top: 10vh;
   }
@@ -318,6 +401,9 @@ main#home h1 {
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh;
+  }
+  .projects{
+    grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=main.css.map */
