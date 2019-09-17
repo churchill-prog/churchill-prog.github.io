@@ -1,0 +1,1177 @@
+<html>
+	<head>
+		<style>
+			*{
+		box-sizing: border-box;
+		padding: 0;
+			margin: 0;
+			outline: none;
+		}
+		div{
+			padding: 0;
+			margin: 0;
+			outline: none;
+		}
+		body{
+			font-family: Roboto, sans-serif;
+		}
+		.container{
+		display: flex;
+    	justify-content: space-evenly;
+	}
+	.app{
+	background: #f7f9fc;
+	overflow: hidden;
+	box-shadow: 0 35px 55px -20px rgba(0,0,0,0.4);
+	display:flex;
+	flex-direction:column;
+}
+	.cover{
+	position: relative;
+	height:  253px;
+	overflow: hidden;
+}
+	.cover img{
+	height: 100%;
+	margin-left: 0px;
+	box-shadow: -5px 60px 15px 55px rgba(2,7,33,0.4), -5px 60px 35px -55px rgba(0,0,0,0.2);
+}
+.cover:after{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 297px;
+	display: inline-block;
+	background: transparent;
+	top: 0;
+	left: 0;
+}
+.cover .fa{
+	position: relative;
+	font-size: 38px;
+	left: 50%;
+	top: 55px;
+	color: #f7f9fc;
+	margin-left: -15px;
+	opacity: 0.9;
+}
+.cover .title{
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	bottom: 0;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 600;
+	background: rgba(2,7,33,0.7);
+	padding: 10px 0;
+	letter-spacing: 0.5px;
+	left: 0px;
+}
+.cover .title span{
+	display: block;
+	font-size: 10px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	padding-top: 5px;
+}
+.fav{
+	position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    width: 100%;
+}
+.btn{
+	padding: 10px 15px;
+    border: none;
+    border-radius: 35px;
+    margin-top: 10px;
+    background: #f1eb0b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+    min-width: 170px;
+}
+.fav .fa{
+	font-size: 14px;
+	padding-right: 5px;
+}
+.fav .users{
+	position: relative;
+    margin-top: 10px;
+    z-index: 99999;
+    display: flex;
+    justify-content: space-around;
+}
+.fav .users img{
+	position: relative;
+    width: 60px;
+    border: 6px solid #f1eb0b;
+    border-radius: 100%;
+    height: 60px;
+}
+.user-1{
+	z-index: 99;
+}
+.user-2{
+	z-index: 98;
+}
+.optica-name{
+	color: #1717eceb;
+}
+/*.fav:before, .fav:after{
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	clear: both;
+}*/
+
+         .side-drawer{
+	height:100%;
+	background:white;
+	box-shadow: 0 10px 4px 9px rgba(0,0,0,0.1);
+	position:fixed;
+	top:0;
+	left:0;
+	width:57%;
+	max-width:400px;
+	z-index:10000;
+	transform:translateX(-102%);
+	transition: transform 0.3s ease-in;
+}
+.side-drawer.open{
+	transform: translateX(0)
+}
+.side-drawer ul{
+	height:100%;
+	list-style:none;
+	display:flex;
+	flex-direction:column;
+    justify-content:flex-start;
+    margin-left: 10%;
+}
+
+.side-drawer li{
+	margin:0.9rem 0;
+}
+.side-drawer a:hover, .side-drawer:active{
+	color:#fa923f;
+}
+
+.side-drawer a{
+	text-decoration:none;
+	padding: 0 5%;
+    font-size: 16px;
+    color: rgba(0,0,0,0.3);
+    font-weight: 600;
+    line-height: 16px;
+}
+
+#close-meal-category{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 35px;
+    margin-top: 10px;
+    background: #ff5349;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #d24c0f, inset 0 0 25px rgba(0,0,0,0.05);
+    min-width: 170px;
+}
+.story{
+	width: 90%;
+    height: auto;
+    background: #f1eb0b;
+    margin: 40px auto;
+    flex-direction: column;
+    padding: 10px 0;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    box-shadow: 0 10px 15px -1px rgba(0,0,0,0.1);
+    border-radius: 13px;
+    color:#fff;
+}
+.story div{
+	display: inline-block;
+}
+.story .story-text{
+	width: 100%;
+	padding: 0 5%;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+}
+.schedule{
+	position: relative;
+	width: 90%;
+	height: auto;
+	background: #fff;
+	margin: 50px auto;
+	border: 1px solid rgba(0,0,0,0.03);
+	box-shadow: 0 10px 15px -1px rgba(0,0,0,0.1);
+}
+.schedule> .title{
+	position: absolute;
+	font-size: 16px;
+	margin-top: -35px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.5);
+}
+.detail .date{
+	padding: 8px 5px;
+	display: inline-block;
+	background: #4f5393;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	box-shadow: inset 0 -25px 75px -25px rgba(0,0,0,0.4);
+}
+.detail .date span{
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: 400;
+	padding-top: 2px;
+}
+.detail .location{
+	position: relative;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	padding: 0 10px;
+	top: 1px;
+	color: rgba(0,0,0,0.6);
+}
+.detail .location span{
+	display: block;
+	font-size: 12px;
+	color: rgba(0,0,0,0.3);
+}
+.detail .btn{
+	margin-top: 12px;
+	right: 10px;
+}
+.map-location{
+	position: relative;
+	height: 105px;
+	display: inline-block;
+	padding: 15px 0 5px 0;
+}
+.map-location img{
+	width: 120px;
+}
+.map-location:before{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset: 0 0 25px 9px #fff;
+}
+.map-location:after{
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: #ff5349;
+	position: absolute;
+	top: 0;
+	border-radius: 100%;
+	margin-top: 65px;
+	margin-left: 50px;
+	border: 1px solid rgba(255,255,255,0.4);
+	box-shadow: 0 0 0 5px rgba(255,83,73,0.5), 0 0 0 10px rgba(255,83,73,0.2);
+}
+.distance{
+	position: absolute;
+	top: 42px;
+	margin-left: 43px;
+	font-weight: 600;
+	font-size: 11px;
+	padding: 5px 10px;
+	background: #fff;
+	color: rgba(0,0,0,0.5);
+	z-index: 99;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+.distance:after{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #fff;
+	left: 7px;
+	margin-top: 18px;
+}
+.schedule-info{
+	float: right;
+	margin-top: 15px;
+	width: 62%;
+	margin-right: -7px;
+}
+.schedule-info span{
+	display: inline-block;
+}
+.rows > span{
+	width: 40%;
+	/*padding: 5px 5%;*/
+}
+.schedule-info span.info{
+	display: block;
+}
+.schedule-info span .title{
+	font-size: 11px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.3);
+	padding-bottom: 5px;
+}
+.schedule-info span .name,.schedule-info span .time{
+	font-size: 14px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.7);
+}
+.schedule-info span .row-line{
+	font-size: 11px;
+	background: #ff5349;
+	padding: 4px 8px;
+	border-radius: 20px;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 1px
+}
+.schedule-info span .seat-num span{
+	font-size: 11px;
+	background: #4f5393;
+	padding: 5px;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 500;
+
+}
+.call-to-action{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.gallery-container{
+				width: 100%;
+				height:290px;
+				user-select:none;
+				box-sizing: border-box;
+			}
+			.gallery-container .slide-show-container{
+				width:100%;
+				height:90%;
+				overflow:hidden;
+				background-color:gainsboro;
+				position:relative;
+			}
+			.gallery-container .slide-show-container .image-holder{
+				width:100%;
+				height:100%;
+				position:absolute;
+				opacity:0;
+			}
+			}
+			.gallery-container .slide-show-container{
+				width:100%;
+				height:90%;
+				overflow:hidden;
+				background-color:gainsboro;
+				position:relative;
+			}
+			.gallery-container .slide-show-container .image-holder{
+				width:100%;
+				height:100%;
+				position:absolute;
+				opacity:0;
+			}
+.gallery-container .slide-show-container .image-holder img{
+				width:100%;
+				height:100%;
+
+			}
+			.gallery-container .slide-show-container .image-holder .caption-text{
+				display:none;
+			}
+			.gallery-container .slide-show-container .left-arrow,.gallery-container .slide-show-container .right-arrow{
+				width:50px;
+				background:#1717ec5c;
+				position:absolute;
+				left:0;
+				z-index:1;
+				transition:background 0.5s;
+				height:72px;
+				top:50%;
+				transform:translateY(-50%);
+			}
+			.gallery-container .slide-show-container .right-arrow{
+				left:auto;
+				right:0;
+			}
+			.gallery-container .slide-show-container .right-arrow:hover{
+				background:#000000a8;
+				cursor:pointer;
+			}
+			.gallery-container .slide-show-container .left-arrow:hover{
+				background:#000000a8;
+				cursor:pointer;
+			}
+			.gallery-container .slide-show-container .arrow{
+				display:inline-block;
+				border:3px solid #f1eb0b;
+				width:10px;
+				height:10px;
+				border-left:none;
+				border-bottom:none;
+				margin:auto;
+				position:absolute;
+				left:0;
+				right: 0;
+				top:0;
+				bottom:0;
+			}
+			.gallery-container .slide-show-container .arrow.arrow-left{
+				transform:rotateZ(-135deg);
+			}
+			.gallery-container .slide-show-container .arrow.arrow-right{
+				transform:rotateZ(45deg);
+			}
+			.gallery-container .slide-show-container .caption-holder{
+				position:absolute;
+				bottom:0;
+				z-index:1;
+				color:#fff;
+				font-family:sans-serif;
+				font-size:13px;
+				text-align:center;
+				width:100%;
+				background:#f1eb0b70;
+				height:70px;
+				overflow:hidden;
+			}
+			.gallery-container .slide-show-container .caption-holder>.caption-text{
+				margin:0;
+
+			}
+			.gallery-container #dots-container{
+				width:100%;
+				height:10%;
+				text-align:center;
+				padding-top:8px;
+				box-sizing: border-box;	
+			}
+			.gallery-container #dots-container .dots{
+				display:inline-block;
+				width:28px;
+				height:15px;
+				border-radius:50%;
+				margin-left:10px;
+				background-color:#f1eb0b;
+				cursor:pointer;
+				transition:background-color 0.5s;
+			}
+			.gallery-container #dots-container .dots:hover{
+				background-color:#717171;
+			}
+			.gallery-container #dots-container .dots.active{
+				background-color:blue;
+			}
+			.gallery-container #dots-container .dots:first-child{
+				margin-left:0;
+			}
+			.gallery-container .move-left-current-slide{
+				animation-name:move-left-current;
+				animation-duration: 0.5s;
+				animation-timing-function:linear;
+				animation-fill-mode:forwards;
+			}
+			.gallery-container .move-left-next-slide{
+				animation-name:move-left-next;
+				animation-duration: 0.5s;
+				animation-timing-function:linear;
+				animation-fill-mode:forwards;
+			} 
+			@keyframes move-left-current{
+				from{
+					margin-left:0;
+					opacity:1;
+				}to{
+					margin-left:-100%;
+					opacity:1;
+				}
+			}
+			@keyframes move-left-next{ 
+				from{
+					margin-left:100%;
+					opacity:1;
+				}to{
+					margin-left:0;
+					opacity:1;
+				}
+			}
+
+			.gallery-container .move-right-current-slide{
+				animation-name:move-right-current;
+				animation-duration: 0.5s;
+				animation-timing-function:linear;
+				animation-fill-mode:forwards;
+			}
+			.gallery-container .move-right-next-slide{
+				animation-name:move-right-next;
+				animation-duration: 0.5s;
+				animation-timing-function:linear;
+				animation-fill-mode:forwards;
+			} 
+			@keyframes move-right-current{
+				from{
+					margin-left:0;
+					opacity:1;
+				}to{
+					margin-left:100%;
+					opacity:1;
+				}
+			}
+			@keyframes move-right-next{ 
+				from{
+					margin-left:-100%;
+					opacity:1;
+				}to{
+					margin-left:0;
+					opacity:1;
+				}
+			}
+			.slide-text-from-bottom{
+				animation-name: slide-text-from-bottom;
+				animation-duration: .7s;
+				animation-timing-function: ease-out;
+			}
+			@keyframes .slide-text-from-bottom{
+				from{opacity:0;margin-top:100px;}
+				to{opacity:1;margin-top:0;}
+			}
+			.slide-text-from-top{
+				animation-name: slide-text-from-top;
+				animation-duration: .7s;
+				animation-timing-function: ease-out;
+			}
+			@keyframes .slide-text-from-top{
+				from{opacity:0;margin-top:-100px;}
+				to{opacity:1;margin-top:0;}
+			}
+			.header{
+				padding: 10px 15px;
+			    border: none;
+			    border-radius: 35px;
+			    margin-top: 10px;
+			    background: #f1eb0b;
+			    color: #fff;
+			    font-size: 14px;
+			    margin-bottom: 10px;
+			    height: 50px;
+			    font-weight: 500;
+    			box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+    			display: flex;
+	    		flex-direction: row;
+	    		justify-content: space-around;
+			}
+			.app-name{
+				font-size: 27px;
+
+			}
+			.menu-open{
+				display: flex;
+			    justify-content: space-around;
+			    width: 125px;
+			    line-height: 2;
+			}
+			#dialogoverlay{
+    display: none;
+    opacity: .8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #717171;
+    width: 100%;
+    z-index: 9999999999;
+}
+#dialogbox{
+    display: none;
+    position: fixed;
+    border-radius: 7px;
+    z-index: 9999999999;
+    transform: translate3d(0%, -100%, 0);
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+    overflow: auto;
+    width:45%;
+}
+#dialogbox.animate{
+    transform: translate3d(0, 0, 0);
+}
+
+            #dialogbox>div{  background: #fff; margin: 8px;}
+            #dialogbox>div>#dialogboxhead{background: #f1eb0b;font-size:19px;padding: 10px;color:blue;}
+            #dialogbox>div>#dialogboxbody{background: blue;padding: 20px; color: #fff;}
+            #dialogbox>div>#dialogboxfoot{background: #f1eb0b;padding:10px;text-align:right;}
+
+#dialogbox div input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 14px;
+    color: #fff;
+    border-bottom: 1px solid #92cf48;
+    padding: 15px 30px;
+}
+.popup-dialog-button{
+    border:none;
+    outline: none;
+    padding:5px;
+    border:1px solid blue;
+    border-radius:4px;
+    color: blue;
+    background: transparent;
+    cursor: pointer;
+    margin: 5px;
+}
+.popup-dialog-button:hover{
+    background: #fff;
+}
+#items-number-wrapper{
+    width: 20px;
+    background: red;
+    border-radius: 100%;
+    height: 20px;
+}
+#items-number{
+	font-size: 10px;
+	position: relative;
+    bottom: -1px;
+    left: 4px;
+}
+.category-wrapper{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+.category-wrapper p{
+	font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top:2px;
+    color:blue;
+}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+            	<div class="header">
+      
+            		<div class="app-name">
+            			<p class="optica-name">Optica.</p>
+            		</div>
+            		<div class="menu-open">
+            			<p class="navigate2" href="opticaappcartlist.html">Cart<div id="items-number-wrapper"><span id="items-number">10</span></div></p>
+            		</div>
+            	</div>
+				<div class="gallery-container cover">
+					<div class="slide-show-container">
+						<div class="left-arrow" onclick="plusSlides(-1)"><span class="arrow arrow-left"></span></div>
+						<div class="right-arrow" onclick="plusSlides(1)"><span class="arrow arrow-right"></span></div>
+						<div class="caption-holder"><p class="caption-text"></p></div>
+						<div class="image-holder">
+							<img src="https://assets.ray-ban.com/is/image/RayBan/805289345015_shad_qt?$FBShare$">
+							<span class="title caption-text">
+								Funky and trendy
+								<span>
+									Urban, Hip, Crazy eye-wear we've got you
+								</span>
+							</span>
+						</div>
+						<div class="image-holder">
+							<img src="https://image.ebdcdn.com/image/upload/c_fill,e_sharpen:70,f_auto,h_300,q_auto:good,w_600/v1/product/frame/white/pl5086_3.jpg">
+							<span class="title caption-text">
+								Precise and Accurate
+								<span>
+									We do not compromise on quality 
+								</span>
+							</span>
+						</div>
+						<div class="image-holder">
+							<img src="https://s7d5.scene7.com/is/image/Glasses/713132376980_shad_qt?$g-thumbnail-plp$">
+							<span class="title caption-text">
+								 Sharp and professional
+								<span>
+									Make that impression nomatter the business
+								</span>
+							</span>
+						</div>
+					</div>
+					<div id="dots-container"></div>
+				</div>
+					<i class="fa fa-youtube-play"></i>
+				<div class="fav">
+					<button class="btn" id="add-to-favourites">
+						<i class="fa fa-plus"></i>
+						Add To Favourites
+					</button>
+					<button class="btn navigate go-to-comment" id="add-to-favourites" href="opticaappcomment.html">
+						<i class="fa fa-plus"></i>
+						Add a Comment
+					</button>
+					<div class="users" id="users">
+					</div>
+				</div>
+				<div class="story">
+					<div class="story-text">
+						Eye care is our main business and we handle it with care the way we handle our main business , brouse through our mini shop, find something you like click pay and get it
+					</div>
+				</div>	
+			</div>
+			<div id="dialogoverlay"></div>
+	        <div id="dialogbox">
+	            <div>
+	                <div id="dialogboxhead"></div>
+	                <div id="dialogboxbody"></div>
+	                <div id="dialogboxfoot"></div>
+	            </div>
+	        </div>
+
+			<script>
+
+			var slideIndex,slides,dots,captionText;
+			function initGallery(){
+				slideIndex=0;
+				slides = document.getElementsByClassName("image-holder");
+				slides[slideIndex].style.opacity = 1;
+
+
+				captionText = document.querySelector(".caption-holder .caption-text");
+				captionText.innerText = slides[slideIndex].querySelector(".caption-text").innerText;
+
+				dots = [];
+				var dotsContainer = document.getElementById("dots-container");
+
+				for(var i=0;i<slides.length;i++){
+					var dot= document.createElement("span");
+					dot.classList.add("dots");
+					dot.setAttribute("onClick", "moveSlides("+i+")");
+					dotsContainer.append(dot);
+					dots.push(dot);
+				}
+				dots[slideIndex].classList.add("active"); 
+			} 
+			function plusSlides(n){
+				moveSlides(slideIndex+n);
+			}
+			function moveSlides(n){
+				var i,current,next;
+				var moveSlideAnimClass = {
+					forCurrent:"",
+					forNext:"",
+				}
+				var sliderTextAnimClass;
+				if(n>slideIndex){
+					if(n>=slides.length){n=0}
+					moveSlideAnimClass.forCurrent = "move-left-current-slide";
+					moveSlideAnimClass.forNext = "move-left-next-slide";
+					sliderTextAnimClass = "slider-text-from-top";
+				}else if(n<slideIndex){
+					if(n<0){n=slides.length-1}
+					moveSlideAnimClass.forCurrent = "move-right-current-slide";
+					moveSlideAnimClass.forNext = "move-right-next-slide";
+					sliderTextAnimClass = "slider-text-from-bottom";
+				}
+				if(n!=slideIndex){
+					next = slides[n];
+					current = slides[slideIndex];
+					for(i=0;i<slides.length;i++){
+						slides[i].className = "image-holder";
+						slides[i].style.opacity = 0;
+						dots[i].classList.remove("active");
+					}
+					current.classList.add(moveSlideAnimClass.forCurrent);
+					next.classList.add(moveSlideAnimClass.forNext);
+					dots[n].classList.add("active");
+					slideIndex=n;
+				}
+				captionText.style.display="none";
+				captionText.className = "caption-text "+sliderTextAnimClass;
+				captionText.innerText = slides[n].querySelector(".caption-text").innerText;
+				captionText.style.display = "block";
+			}
+			var timer=null;
+			function setTimer(){
+				timer=setInterval(function(){
+					plusSlides(1);
+				},3000);
+			}
+			initGallery();
+			setTimer();
+
+
+			function CustomConfirm() {
+                
+                this.render = function(clickId,dialog,op,id){
+
+                    if(clickId=="new-category"){
+                        var continueId = "category-name";
+                        var html = "<div><input type='text' placeholder='Category name' id='dish-category'></div>";
+                        var buttons = '<button class="popup-dialog-button dynamic-content" id='+continueId+' onclick="Confirm.yes(\''+continueId+'\')">Continue</button> <button class="popup-dialog-button" onclick="Confirm.no()">Cancel</button>';
+                    }else if(clickId=="new-branch") {
+                        var continueId = "branch-name";
+                        var html = "<div><input type='text' placeholder='Branch name' id='branch-name'></div>";
+                        var buttons = '<button class="popup-dialog-button dynamic-content" id='+continueId+' onclick="Confirm.yes(\''+continueId+'\')">Continue</button> <button class="popup-dialog-button" onclick="Confirm.no()">Cancel</button>';
+                    }else if(clickId=='cancel-activity'){
+                        var continueId = "delete-token"
+                        var html ="<p>Continuing will cancel your previous activity ..."
+                        var buttons = '<button class="popup-dialog-button dynamic-content" id='+continueId+' onclick="Confirm.yes(\''+continueId+'\')">Continue</button> <button class="popup-dialog-button" onclick="Confirm.no()">Cancel</button>';
+                    }else if(clickId=='add-to-favourites'){
+                        var continueId = "add-to-favourites"
+                        var html ="<p>This will add this app to your Mobilet favourites list ....</p>"
+                        var buttons = '<button class="popup-dialog-button dynamic-content" id='+continueId+' onclick="Confirm.yes(\''+continueId+'\')">Continue</button> <button class="popup-dialog-button" onclick="Confirm.no()">Cancel</button>';
+                    }
+                    var winWidth = window.innerWidth;
+                    var winHeight = window.innerHeight;
+                    var dOverlay = document.getElementById("dialogoverlay");
+                    var dBox = document.getElementById("dialogbox");
+                    dOverlay.style.display = "block";
+                    dOverlay.style.height = winHeight+"px";
+                    dBox.style.left = (winWidth/2)-(210 * .5)+"px";
+                    dBox.style.top = "100px";
+                    dBox.style.display = "block";
+                    dBox.style.fontSize = "13px";
+                    dBox.classList = "animate";
+                    document.getElementById("dialogboxhead").innerHTML = dialog;
+                    document.getElementById("dialogboxbody").innerHTML = html;
+                    document.getElementById("dialogboxfoot").innerHTML = buttons;
+                }
+                this.no = function(){
+                    var dOverlay = document.getElementById("dialogoverlay");
+                    var dBox = document.getElementById("dialogbox");
+                    dOverlay.style.display = "none";
+                    dBox.style.display = "none";
+
+                }
+                this.yes = function(id){
+                    if(id=="add-to-favourites"){
+                        var url="http://127.0.0.1:9999/insertnewfavourites";
+                        fetch(url,{method:"POST",headers:{"Accept":"application/json","Content-Type":"application/json",'Authorization': 'Bearer '+cartJson[0].token,},body:JSON.stringify({dishCategory:document.getElementById("dish-category").value,token:cartJson[0].token})}).then((response)=>response.json()).then((responseJsonFromServer)=>{console.log(responseJsonFromServer); 
+                        if(responseJsonFromServer.message=="a new category has been added"){
+                            console.log("in db");
+                            
+                        }else{
+                            _("error-handler").innerHTML="Passcode not recognised, try again";
+                        }
+                        })
+                        var dOverlay = document.getElementById("dialogoverlay");
+                        var dBox = document.getElementById("dialogbox");
+                   
+                        dOverlay.style.display = "none";
+                        dBox.style.display = "none";
+                    }else if(id=="branch-name"){
+                        CART.addNewBranch(document.getElementById("branch-name").value);
+                        setIframeURL("lerestronewbranch.html")
+                        var dOverlay = document.getElementById("dialogoverlay");
+                        var dBox = document.getElementById("dialogbox");
+            
+                        dOverlay.style.display = "none";
+                        dBox.style.display = "none";
+                    }else if(id=="delete-token"){
+                        CART.contents = [];
+                        CART.sync();
+                        setIframeURL("latestupdates.html");
+                    }
+                    var dOverlay = document.getElementById("dialogoverlay");
+                    var dBox = document.getElementById("dialogbox");
+        
+                    dOverlay.style.display = "none";
+                    dBox.style.display = "none";
+                }
+        	}
+            var Confirm = new CustomConfirm();
+
+            const button = document.querySelectorAll(".button");
+			let PAGEPRODUCTS = [];
+
+			function _(x) { return document.getElementById(x) };
+			function hasClass(element, className){
+				return element.className.split(" ").indexOf(className) > -1;
+			}
+			function addClass(element, className){
+				if(hasClass(element, className)){
+					return element.classList;
+				} else {
+					return element.classList.add(className);
+				}
+			}
+			function removeClass(element, className){
+				if(hasClass(element, className)){
+					return element.classList.remove(className);
+				}else{
+					return element.classList;
+				}
+			}
+
+			function showPageProducts(cart) {
+			var cartJson = JSON.parse(cart);
+			const cartLength = cartJson.length;
+			//console.log(cartJson);
+			console.log(cartLength);
+			//console.log(cartLength);
+			fetch('http://127.0.0.1:9999/data',
+		            {
+		                method: 'POST',
+		                headers: 
+		                {
+		                    'Accept': 'application/json',
+		                    'Content-Type': 'application/json',
+		                }
+		 
+		            }).then((resp) =>resp.json()).then((responseJsonFromServer) =>
+		            {
+						PAGEPRODUCTS = responseJsonFromServer;
+						console.log(responseJsonFromServer);
+					   /*_("products").innerHTML = PAGEPRODUCTS.map(function(item){
+							
+								for(var i=0; i<cartLength; i++){
+									if(item.id == cartJson[i].id) {
+									return	`<p>${cartJson[i].product}</p>
+											<p>${cartJson[i].description}</p>
+										<button class="button" data-id=${cartJson[i].id} id=${cartJson[i].id}>
+											In Cart
+										</button>`;
+									}
+								}
+									return `<p>${item.product}</p>
+										<p>${item.description}</p>
+										<button class="button" data-id=${item.id} id=${item.id}>
+											Add to Cart
+										</button>`;
+								
+								})*/
+
+		            }).catch((error) =>
+		            {
+		                console.error(error);
+
+		            });
+		}
+
+		function showCategories2(){
+				fetch('https://api.myjson.com/bins/klso5',
+		            {
+		                method: 'GET',
+		                headers: 
+		                {
+		                    'Accept': 'application/json',
+		                    'Content-Type': 'application/json',
+		                },
+		 
+		            }).then((resp) =>resp.json()).then((responseJsonFromServer) =>
+		            {
+		            	console.log(responseJsonFromServer)
+					    responseJsonFromServer.map(function(category){
+							_("users").innerHTML +=`
+								<a class='navigate' href="opticaapplist.html?categoryId=${category.categoryId}&branchId=5d662a9827ce5701c0d16a63">
+									<img src="${category.imageUrl}" alt="${category.categoryName}" class="user-1 ">
+									<p>${category.categoryName}</p>
+								</a>
+							`;	
+						});
+		            }).catch((error) =>
+		            {
+		                console.error(error);
+		            });
+			}
+
+		function getHref(){
+				document.querySelector(".navigate").addEventListener("click", function(e) {
+					
+					e.preventDefault();
+					var href = e.currentTarget.getAttribute("href")
+					window.location = href;
+				})
+			}
+		function getHref2(){
+				document.querySelector(".navigate2").addEventListener("click", function(e) {
+					
+					e.preventDefault();
+					var href = e.currentTarget.getAttribute("href")
+					window.location = href;
+				})
+			}	
+			const CART = {
+	KEY: 'bjasopticajdbakhadjsk71',
+	contents: [],
+	init() {
+		//check localStorage and initialize the contents of CART.contentslet 
+		let _contents = localStorage.getItem(CART.KEY); 
+		if(_contents) {
+			CART.contents = JSON.parse(_contents);
+		}else {
+			CART.contents = [];
+			CART.sync();
+		}
+	},
+	async sync() {
+		let _cart = JSON.stringify(CART.contents);
+		await localStorage.setItem(CART.KEY, _cart);
+	},
+	find(id) {
+		console.log(id);
+		//find an item in the cart by its id
+		let match = CART.contents.filter(item => {
+			if(item.itemId == id) 
+				return true;
+		});
+		if(match && match[0])
+			return match[0];
+	},
+	addItem(id) {
+
+		if(CART.find(id)) {
+			return 0;//CART.increase(id, 1);
+			console.log(PAGEPRODUCTS);
+		}else{
+			let arr = PAGEPRODUCTS.filter(product=> {
+				if(product.itemId == id) {
+					return true;
+				}
+			});
+			console.log(arr);
+		if(arr && arr[0]) {
+			let obj = {
+				itemId: arr[0].itemId,
+				itemName: arr[0].itemName,
+				itemPrice: arr[0].itemPrice,
+				imageUrl: arr[0].imageUrl,
+				quantity: 1,
+			};
+			CART.contents.push(obj);
+			//update localStorage
+			
+			CART.sync();
+			console.log(CART.contents);
+		}else {
+			//product id does not exist in products data
+			console.error("invalid product");
+		}
+	}
+	},
+	filter(array, test){
+			var passed = [];
+			for(var i = 0; i< array.length; i++){
+				if(test(array[i])){
+					passed.push(array[i]);
+				}
+			}
+			return passed;
+		
+	},
+	remove(id) {
+		//remove an item entirely from CART.contents based on its id 
+		CART.contents = CART.filter(CART.contents, (items)=> {
+			return items.itemId != id;
+		})
+		_(id).innerHTML = "Add to Cart";
+		//update localStorage
+		console.log(CART.contents);
+		CART.sync();
+	},
+	empty() {
+		//empty whole cart
+		CART.contents = [];
+		//update localStorage
+		CART.sync();
+	},
+}
+			function showCategories(){
+				fetch('http://127.0.0.1:9999/showcategoriesforbranch',
+		            {
+		                method: 'POST',
+		                headers: 
+		                {
+		                    'Accept': 'application/json',
+		                    'Content-Type': 'application/json',
+		                },
+		                body: JSON.stringify(
+                        {
+                          branchId: '5d662a9827ce5701c0d16a63',
+                      })
+		 
+		            }).then((resp) =>resp.json()).then((responseJsonFromServer) =>
+		            {
+		            	console.log(responseJsonFromServer)
+					    responseJsonFromServer.map(function(category){
+							_("users").innerHTML +=`
+								<a class='navigate' href="opticaapplist.html?categoryId=${category.categoryId}&branchId=5d662a9827ce5701c0d16a63">
+									<img src="${category.imageUrl}" alt="${category.categoryName}" class="user-1 ">
+									<p>${category.categoryName}</p>
+								</a>
+							`;	
+						});
+		            }).catch((error) =>
+		            {
+		                console.error(error);
+		            });
+			}
+	        window.onload = function(){
+	        	//showCategories();
+	        	showCategories2();
+	            document.getElementById("add-to-favourites").addEventListener("click", function(e){e.preventDefault(); 
+                    Confirm.render('add-to-favourites', 'Add to Favourites');
+                });
+            
+				var incarts = localStorage.getItem(CART.KEY);
+				var incartsJson = JSON.parse(incarts);
+				_("items-number").innerHTML = CART.contents.length;
+				window.addEventListener("click", function(e){
+					if(hasClass(e.target, "button")){
+						console.log(e.target.id)
+						if(CART.find(e.target.id)){
+							console.log("item in cart");
+							var confirmation = confirm("Item in Cart, Remove from Cart");
+							console.log(confirmation);
+							if(confirmation == true){
+								CART.remove(e.target.id)
+								_("items-number").innerHTML = CART.contents.length;
+								console.log(CART.contents.length);
+							}else if(confirmation == false){
+								return 0;
+							}
+						}else {
+							console.log("item not in cart");
+							_(e.target.id).innerHTML = "In Cart";
+							CART.addItem(e.target.id);
+							_("items-number").innerHTML = CART.contents.length;
+							console.log(CART.contents.length);
+						}	
+					}
+				}, false)
+				//get the cart items from localStorage
+				CART.init();
+				//load the cart items
+				_("items-number").innerHTML = CART.contents.length;
+				console.log(CART.contents.length);
+				showPageProducts(incarts);	
+				getHref();
+				getHref2();
+	        }
+		</script>
+
+	</body>
+</html>

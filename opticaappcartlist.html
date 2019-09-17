@@ -1,0 +1,718 @@
+<html>
+	<head>
+		<style>
+			*{
+		box-sizing: border-box;
+		padding: 0;
+			margin: 0;
+			outline: none;
+		}
+		div{
+			padding: 0;
+			margin: 0;
+			outline: none;
+		}
+		body{
+			font-family: Roboto, sans-serif;
+		}
+		.container{
+		display: flex;
+    	justify-content: space-evenly;
+	}
+	.app{
+	background: #f7f9fc;
+	overflow: hidden;
+	box-shadow: 0 35px 55px -20px rgba(0,0,0,0.4);
+	display:flex;
+	flex-direction:column;
+}
+	.cover{
+	position: relative;
+	height:  253px;
+	overflow: hidden;
+}
+	.cover img{
+	height: 100%;
+	margin-left: 0px;
+	box-shadow: -5px 60px 15px 55px rgba(2,7,33,0.4), -5px 60px 35px -55px rgba(0,0,0,0.2);
+}
+.cover:after{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 297px;
+	display: inline-block;
+	background: transparent;
+	top: 0;
+	left: 0;
+}
+.cover .fa{
+	position: relative;
+	font-size: 38px;
+	left: 50%;
+	top: 55px;
+	color: #f7f9fc;
+	margin-left: -15px;
+	opacity: 0.9;
+}
+.cover .title{
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	bottom: 0;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 600;
+	background: rgba(2,7,33,0.7);
+	padding: 10px 0;
+	letter-spacing: 0.5px;
+	left: 0px;
+}
+.cover .title span{
+	display: block;
+	font-size: 10px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	padding-top: 5px;
+}
+.fav{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+.btn{
+	padding: 10px 15px;
+    border: none;
+    border-radius: 35px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    background: blue;
+}
+.fav .fa{
+	font-size: 14px;
+	padding-right: 5px;
+}
+.fav .users{
+	position: relative;
+    margin-top: 10px;
+    z-index: 99999;
+    display: flex;
+    justify-content: space-around;
+}
+.fav .users img{
+	position: relative;
+    width: 60px;
+    border: 6px solid #f1eb0b;
+    border-radius: 100%;
+    height: 60px;
+}
+.user-1{
+	z-index: 99;
+}
+.user-2{
+	z-index: 98;
+}
+.optica-name{
+	color: #1717eceb;
+}
+
+         .side-drawer{
+	height:100%;
+	background:white;
+	box-shadow: 0 10px 4px 9px rgba(0,0,0,0.1);
+	position:fixed;
+	top:0;
+	left:0;
+	width:57%;
+	max-width:400px;
+	z-index:10000;
+	transform:translateX(-102%);
+	transition: transform 0.3s ease-in;
+}
+.side-drawer.open{
+	transform: translateX(0)
+}
+.side-drawer ul{
+	height:100%;
+	list-style:none;
+	display:flex;
+	flex-direction:column;
+    justify-content:flex-start;
+    margin-left: 10%;
+}
+
+.side-drawer li{
+	margin:0.9rem 0;
+}
+.side-drawer a:hover, .side-drawer:active{
+	color:#fa923f;
+}
+
+.side-drawer a{
+	text-decoration:none;
+	padding: 0 5%;
+    font-size: 16px;
+    color: rgba(0,0,0,0.3);
+    font-weight: 600;
+    line-height: 16px;
+}
+
+#close-meal-category{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 35px;
+    margin-top: 10px;
+    background: #ff5349;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #d24c0f, inset 0 0 25px rgba(0,0,0,0.05);
+    min-width: 170px;
+}
+.story{
+	width: 90%;
+    height: auto;
+    background: #f1eb0b;
+    margin: 40px auto;
+    flex-direction: column;
+    padding: 10px 0;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    box-shadow: 0 10px 15px -1px rgba(0,0,0,0.1);
+    border-radius: 13px;
+    color:#fff;
+}
+.story div{
+	display: inline-block;
+}
+.story .story-text{
+	width: 100%;
+	padding: 0 5%;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+}
+.schedule{
+	position: relative;
+	width: 90%;
+	height: auto;
+	background: #f1eb0b;
+	border-radius:10px;
+	margin: 22px auto;
+	border: 1px solid rgba(0,0,0,0.03);
+	box-shadow: 0 10px 15px -1px rgba(0,0,0,0.1);
+}
+.schedule> .title{
+	position: absolute;
+	font-size: 16px;
+	margin-top: -35px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.5);
+}
+.detail .date{
+	padding: 8px 5px;
+	display: inline-block;
+	background: #4f5393;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	box-shadow: inset 0 -25px 75px -25px rgba(0,0,0,0.4);
+}
+.detail .date span{
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: 400;
+	padding-top: 2px;
+}
+.detail .location{
+	position: relative;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	padding: 0 10px;
+	top: 1px;
+	color: rgba(0,0,0,0.6);
+}
+.detail .location span{
+	display: block;
+	font-size: 12px;
+	color: rgba(0,0,0,0.3);
+}
+.detail .btn{
+	margin-top: 12px;
+	right: 10px;
+}
+.map-location{
+	position: relative;
+	height: 105px;
+	display: inline-block;
+	padding: 15px 0 5px 0;
+}
+.map-location img{
+	width: 120px;
+}
+.map-location:before{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset: 0 0 25px 9px #fff;
+}
+.map-location:after{
+	content: "";
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: #ff5349;
+	position: absolute;
+	top: 0;
+	border-radius: 100%;
+	margin-top: 65px;
+	margin-left: 50px;
+	border: 1px solid rgba(255,255,255,0.4);
+	box-shadow: 0 0 0 5px rgba(255,83,73,0.5), 0 0 0 10px rgba(255,83,73,0.2);
+}
+.distance{
+	position: absolute;
+	top: 42px;
+	margin-left: 43px;
+	font-weight: 600;
+	font-size: 11px;
+	padding: 5px 10px;
+	background: #fff;
+	color: rgba(0,0,0,0.5);
+	z-index: 99;
+	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+.distance:after{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #fff;
+	left: 7px;
+	margin-top: 18px;
+}
+.schedule-info{
+	width: 100%;
+	display:flex;
+}
+.image-container{
+	width: 100px;
+    height: 100px;
+    margin: 13px 7px 2px 9px;
+}
+.image-container img{
+	width:100px;
+}
+.schedule-info span{
+	display: inline-block;
+}
+.rows{
+	display: block;
+    font-size: 13px;
+    color: #f7f9fc;
+    margin: 13px;
+}
+.schedule-info span.info{
+	display: block;
+}
+.schedule-info span .title{
+	font-size: 11px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.3);
+	padding-bottom: 5px;
+}
+.schedule-info span .name,.schedule-info span .time{
+	font-size: 14px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.7);
+}
+.schedule-info span .row-line{
+	font-size: 11px;
+	background: #ff5349;
+	padding: 4px 8px;
+	border-radius: 20px;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: 1px
+}
+.schedule-info span .seat-num span{
+	font-size: 11px;
+	background: #4f5393;
+	padding: 5px;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 500;
+
+}
+.call-to-action{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+			.header{
+				padding: 10px 15px;
+			    border: none;
+			    border-radius: 35px;
+			    margin-top: 10px;
+			    background: #f1eb0b;
+			    color: #fff;
+			    font-size: 14px;
+			    margin-bottom: 20px;
+			    height: 50px;
+			    font-weight: 500;
+    			box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+    			display: flex;
+	    		flex-direction: row;
+	    		justify-content: space-around;
+			}
+			.app-name{
+				font-size: 27px;
+
+			}
+			#order-meal{
+				background:blue;
+				box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px blue, inset 0 0 25px blue;
+			}
+			#to-cart{
+				background:#f1eb0b;
+				box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+			}
+			.menu-open{
+				display: flex;
+			    justify-content: space-around;
+			    width: 125px;
+			    line-height: 2;
+			}
+			.totals-container{
+				display: flex;
+    			justify-content: space-evenly;
+    			padding: 10px 15px;
+			    border: none;
+			    margin-top: 10px;
+			    background: #f1eb0b;
+			    color: #fff;
+			    font-size: 14px;
+			    height: 50px;
+			    font-weight: 500;
+    			box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+    			display: flex;
+	    		flex-direction: row;
+	    		line-height: 2;
+			}
+			#display-item{
+				min-height: 378px;
+			}
+			.detail{
+				display: flex;
+			    justify-content: space-evenly;
+			    width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+            	<div class="header">
+            		<div class="app-name">
+            			<p class="optica-name">Optica.</p>
+            		</div>
+            		<div class="menu-open">
+            			<p>Home</p>
+            			<p id="empty-entire-cart">Empty</p>
+            		</div>
+            	</div>
+				<div id="display-item">
+
+				</div>
+				
+				
+				<div class="totals-container">
+					<p id="totals-info">Totals in Kshs</p>:<p id="amount-total"></p> 
+				</div>	
+				<div class="call-to-action">
+					<button class="btn check-out" id="check-out" href="orderfulfilled.html">
+						<i class="fa fa-plus"></i>
+						To Checkout
+					</button>
+					<button class="btn" id="to-cart">
+						<i class="fa fa-plus"></i>
+						Back
+					</button>
+				</div>
+				
+			</div>
+
+		<script>
+			const button = document.querySelectorAll(".button");
+let PAGEPRODUCTS = [];
+
+function _(x) { return document.getElementById(x) };
+function hasClass(element, className){
+	return element.className.split(" ").indexOf(className) > -1;
+}
+function addClass(element, className){
+	if(hasClass(element, className)){
+		return element.classList;
+	} else {
+		return element.classList.add(className);
+	}
+}
+function removeClass(element, className){
+	if(hasClass(element, className)){
+		return element.classList.remove(className);
+	}else{
+		return element.classList;
+	}
+}
+
+const CARTCHECKOUT = {
+	KEY: 'bjasopticajdbakhadjsk71',
+	contents: [],
+	init() {
+		//check localStorage and initialize the contents of CART.contentslet 
+		let _contents = localStorage.getItem(CARTCHECKOUT.KEY); 
+		if(_contents) {
+			CARTCHECKOUT.contents = JSON.parse(_contents);
+		}else {
+			CARTCHECKOUT.contents = [];
+			CARTCHECKOUT.sync();
+		}
+	},
+	async sync() {
+		let _cart = JSON.stringify(CARTCHECKOUT.contents);
+		await localStorage.setItem(CARTCHECKOUT.KEY, _cart);
+	},
+	filter(array, test){
+			var passed = [];
+			for(var i = 0; i< array.length; i++){
+				if(test(array[i])){
+					passed.push(array[i]);
+				}
+			}
+			return passed;
+		
+	},
+	increase(id, qty=1) {
+		//increase the quantity of an item in the cart
+		CARTCHECKOUT.contents = CARTCHECKOUT.contents.map(item => {
+			if(item.itemId === id)
+				item.quantity = item.quantity + qty;
+			return item;
+		});
+		//update localStorage
+		CARTCHECKOUT.sync();
+	},
+	reduce(id, qty=1){
+		//reduce the quantity of an item in the cart
+		CARTCHECKOUT.contents = CARTCHECKOUT.contents.map(item => {
+			if(item.itemId === id)
+				item.quantity = item.quantity - qty;
+			return item;
+		});
+		CARTCHECKOUT.contents.forEach(async item => {
+			if(item.itemId === id && item.quantity == 0)
+				CARTCHECKOUT.remove(id);
+		});
+		//update localStorage
+		CARTCHECKOUT.sync();
+	},
+	remove(id) {
+		//remove an item entirely from CART.contents based on its id 
+		CARTCHECKOUT.contents = CARTCHECKOUT.filter(CARTCHECKOUT.contents, (items)=> {
+			return items.itemId != id;
+		})
+		CARTCHECKOUT.sync();
+		window.location="opticaappcartlist.html";
+	},
+	empty() {
+		//empty whole cart
+		CARTCHECKOUT.contents = [];
+		//update localStorage
+		CARTCHECKOUT.sync();
+	},
+	sort(field="title") {
+		let sorted = CARTCHECKOUT.contents.sort( (a, b)=> {
+			if(a[field] > b[field]) {
+				return 1;
+			}else if(a[field] < a[field]) {
+				return -1;
+			} else {
+				return 0;
+			}
+		});
+		return sorted;
+		//No impact on locaStorage
+	},
+	totalPrice(){
+		var count = 0;
+				for(var i = 0; i<CARTCHECKOUT.contents.length; i++){
+				var quantity = CARTCHECKOUT.contents[i].quantity;
+				var price = CARTCHECKOUT.contents[i].itemPrice * quantity;	
+				count += price;
+		}
+		console.log(count);
+		CARTCHECKOUT.sync();
+		return count;
+			
+	},	
+}
+
+function incrementCart(id){
+	CARTCHECKOUT.increase(id, 1);
+}
+
+function decrementCart(id){
+	console.log(id);
+	CARTCHECKOUT.reduce(id, 1);
+}
+
+function getAllUrlParams(url){
+                var queryString = url ? url.split("?")[1] : window.location.search.splice(1);   
+                var obj = {}
+                if(queryString){
+                    queryString = queryString.split("#")[0]
+                    var arr = queryString.split("&");
+                    
+                    for(var i = 0; i<arr.length; i++){
+                        var a = arr[i].split("=");
+                        var paramName = a[0];
+                        
+                        var paramValue = typeof(a[1]) === 'undefined' ? true: a[1];
+                        
+                        paramName = paramName.toLowerCase();
+                        if(typeof paramValue === 'string') paramValue = paramValue.toLowerCase()
+                            
+                        if(paramName.match(/\[(\d+)?\]$/)){
+                            var key = paramName.replace(/\[(\d+)?\]/, '');
+                            if(! obj[key]) obj[key] = [];
+                            
+                            if(paramName.match(/\[\d+\]$/)){
+                                var index = /\[(\d+)\]/.exec(paramName)[1];
+                                
+                                obj[key][index]  = paramValue;
+                            } else {
+                                obj[key].push(paramValue);
+                            }
+                        }else {
+                            if(! obj[paramName]) {
+                                obj[paramName] = paramValue;
+                            } else if(obj[paramName] && typeof obj[paramName] == 'string'){
+                                obj[paramName] = [obj[paramName]];
+                                obj[paramName].push(paramValue);
+                            } else {
+                                obj[paramName].push(paramValue);
+                            }
+                        }
+                    }
+                }
+                return obj; 
+            }
+let urldata = getAllUrlParams(window.location.href);
+console.log(urldata)
+console.log(CARTCHECKOUT.contents)
+function getHref(){
+	document.querySelector(".go-to-cart").addEventListener("click", function(e) {
+		if(hasClass(e.target, "go-to-cart")){
+			e.preventDefault();
+			var href = e.currentTarget.getAttribute("href")
+			console.log(href);	
+		}
+		e.preventDefault();
+		var href = e.currentTarget.getAttribute("href")
+		window.location = href;
+	})
+}
+function getHref2(){
+	document.querySelector(".check-out").addEventListener("click", function(e) {
+		if(hasClass(e.target, "check-out")){
+			e.preventDefault();
+			var href = e.currentTarget.getAttribute("href")
+			console.log(href);	
+		}
+		e.preventDefault();
+		var href = e.currentTarget.getAttribute("href")
+		window.location = href+"?branchid="+urldata.branchid+"&totalprice="+CARTCHECKOUT.totalPrice();
+	})
+}
+window.onload = function(e){
+	CARTCHECKOUT.init();
+	_("amount-total").innerHTML = CARTCHECKOUT.totalPrice();
+	_("empty-entire-cart").addEventListener("click", function(e){
+		var confirmation = confirm("You are about to delete your entire cart data.. Click okay to continue");
+		if(confirmation == true){
+			CARTCHECKOUT.empty();
+				window.location="opticaappcartlist.html?branchid="+urldata.branchid+"&totalprice="+CARTCHECKOUT.totalPrice();
+			}else if(confirmation == false){
+				return 0;
+			}
+	});
+	window.addEventListener("click", function(e){
+		var count = 0;
+		if(hasClass(e.target, "increment")){
+			let id = (e.target.getAttribute("data-id"));
+			incrementCart(id)
+			_("amount-total").innerHTML = CARTCHECKOUT.totalPrice();
+			window.location="opticaappcartlist.html?branchid="+urldata.branchid+"&totalprice="+CARTCHECKOUT.totalPrice();
+		}else if(hasClass(e.target, "decrement")){
+			let id = (e.target.getAttribute("data-id"));
+			decrementCart(id)
+			_("amount-total").innerHTML = CARTCHECKOUT.totalPrice();
+			window.location="opticaappcartlist.html?branchid="+urldata.branchid+"&totalprice="+CARTCHECKOUT.totalPrice();
+		}else if(hasClass(e.target, "delete-from-checkout")){
+			let id = (e.target.getAttribute("data-id"));
+			CARTCHECKOUT.remove(id);
+			_("amount-total").innerHTML = CARTCHECKOUT.totalPrice();
+
+		}
+	}, false)
+	console.log(CARTCHECKOUT.contents)
+	//get the cart items from localStorage
+	//load the cart items
+	if(CARTCHECKOUT.contents.length==0){
+		_("display-item").innerHTML = "<p id='no-items' style='text-align: center;'>You have no items in your cart</p>";
+	}else{
+		_("display-item").innerHTML= CARTCHECKOUT.contents.map(function(item, i){
+			console.log(i)
+		return `<div class="schedule">
+					<div class="schedule-info">
+						<div class="image-container">
+							<img src="${item.imageUrl}" alt="cover">
+						</div>
+						<div class="rows">
+							${item.itemName}     Kshs ${item.itemPrice} /=
+							<div class="detail">
+								<button class="btn button increment" data-id="${item.itemId}" id="${item.itemId}">
+									+
+								</button>
+								<span class="quantity">${CARTCHECKOUT.contents[i].quantity}</span>
+								<button class="btn button decrement" data-id="${item.itemId}" id="${item.itemId}">
+									-
+								</button>
+								<button class="btn delete-from-checkout" data-id="${item.itemId}" id="${item.itemId}">
+									Remove
+								</button>
+							</div>
+						</div>	
+					</div>
+				</div>`;
+			});	
+	}
+	getHref2();
+}	
+		</script>
+	</body>
+</html>
