@@ -844,7 +844,7 @@ a.navigate{
                         var buttons = '<button class="popup-dialog-button dynamic-content" id='+continueId+' onclick="Confirm.yes(\''+continueId+'\')">Continue</button> <button class="popup-dialog-button" onclick="Confirm.no()">Cancel</button>';
                     }else if(clickId=='add-to-favourites'){
                         var continueId = "add-to-favourites"
-                        var html ="<p>This will add this app to your Mobilet favourites list ....</p>"
+                        var html ="<p>Add to Mobilet favourites</p>"
                         var buttons = '<button class="popup-dialog-button dynamic-content" id='+continueId+' onclick="Confirm.yes(\''+continueId+'\')">Continue</button> <button class="popup-dialog-button" onclick="Confirm.no()">Cancel</button>';
                     }
                     var winWidth = window.innerWidth;
@@ -853,10 +853,9 @@ a.navigate{
                     var dBox = document.getElementById("dialogbox");
                     dOverlay.style.display = "block";
                     dOverlay.style.height = winHeight+"px";
-                    dBox.style.left = (winWidth/2)-(210 * .5)+"px";
+                    dBox.style.left = (winWidth/2)-(280 * .5)+"px";
                     dBox.style.top = "100px";
                     dBox.style.display = "block";
-                    dBox.style.fontSize = "13px";
                     dBox.classList = "animate";
                     document.getElementById("dialogboxhead").innerHTML = dialog;
                     document.getElementById("dialogboxbody").innerHTML = html;
@@ -975,7 +974,7 @@ a.navigate{
 		}
 
 		function showCategories2(){
-				fetch('https://api.myjson.com/bins/klso5',
+				fetch('https://api.myjson.com/bins/1874fx',
 		            {
 		                method: 'GET',
 		                headers: 
