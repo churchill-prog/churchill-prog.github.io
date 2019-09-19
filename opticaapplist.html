@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<style>
-			*{
+				*{
 		box-sizing: border-box;
 		padding: 0;
 			margin: 0;
@@ -34,7 +34,6 @@
 	.cover img{
 	height: 100%;
 	margin-left: 0px;
-	box-shadow: -5px 60px 15px 55px rgba(2,7,33,0.4), -5px 60px 35px -55px rgba(0,0,0,0.2);
 }
 .cover:after{
 	position: absolute;
@@ -80,7 +79,7 @@
 .fav{
 	position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-around;
     width: 100%;
 }
@@ -90,10 +89,10 @@
     border-radius: 35px;
     margin-top: 10px;
     background: #f1eb0b;
-    color: #fff;
-    font-size: 14px;
+    color: #000;
+    font-size: 15px;
     font-weight: 500;
-    box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 18px #f1eb0b;
     min-width: 170px;
 }
 .fav .fa{
@@ -106,12 +105,12 @@
     z-index: 99999;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
 }
-.fav .users img{
-	position: relative;
+	.fav .users img {
+    position: relative;
     width: 146px;
     height: 146px;
+
 }
 .user-1{
 	z-index: 99;
@@ -199,12 +198,23 @@
 .story div{
 	display: inline-block;
 }
+a.navigate{
+	text-decoration: none;
+	color: blue;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+.navigate p{
+	text-align:center;
+}
 .story .story-text{
 	width: 100%;
-	padding: 0 5%;
-	font-size: 12px;
-	font-weight: 600;
-	line-height: 16px;
+    padding: 0 5%;
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    line-height: 16px;
 }
 .schedule{
 	position: relative;
@@ -321,9 +331,11 @@
 .schedule-info span{
 	display: inline-block;
 }
-.rows > span{
-	width: 40%;
-	/*padding: 5px 5%;*/
+.rows {
+	display: flex;
+	font-size: 13px;
+	color: #f7f9fc;
+	margin: 13px;
 }
 .schedule-info span.info{
 	display: block;
@@ -406,7 +418,7 @@
 			}
 			.gallery-container .slide-show-container .left-arrow,.gallery-container .slide-show-container .right-arrow{
 				width:50px;
-				background:#1717ec5c;
+				
 				position:absolute;
 				left:0;
 				z-index:1;
@@ -419,19 +431,11 @@
 				left:auto;
 				right:0;
 			}
-			.gallery-container .slide-show-container .right-arrow:hover{
-				background:#000000a8;
-				cursor:pointer;
-			}
-			.gallery-container .slide-show-container .left-arrow:hover{
-				background:#000000a8;
-				cursor:pointer;
-			}
 			.gallery-container .slide-show-container .arrow{
 				display:inline-block;
-				border:3px solid #f1eb0b;
-				width:10px;
-				height:10px;
+				border:5px solid #f1eb0b;
+				width:30px;
+				height:30px;
 				border-left:none;
 				border-bottom:none;
 				margin:auto;
@@ -456,13 +460,14 @@
 				font-size:13px;
 				text-align:center;
 				width:100%;
-				background:#f1eb0b70;
-				height:70px;
+				height:84px;
 				overflow:hidden;
 			}
 			.gallery-container .slide-show-container .caption-holder>.caption-text{
 				margin:0;
-
+				font-size:16px;
+				font-weight:700;
+				color: blue;
 			}
 			.gallery-container #dots-container{
 				width:100%;
@@ -580,7 +585,7 @@
 			    margin-bottom: 10px;
 			    height: 50px;
 			    font-weight: 500;
-    			box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -16px #f1eb0b, inset 0 0 25px #f1eb0b;
+    			box-shadow: 1px 1px 0 rgba(0,0,0,0.2), 0 16px 15px -17px #f1eb0b, inset 0 0 17px #f1eb0b;
     			display: flex;
 	    		flex-direction: row;
 	    		justify-content: space-around;

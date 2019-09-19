@@ -87,12 +87,14 @@
 .btn{
 	padding: 10px 15px;
     border: none;
-    border-radius: 35px;
+    border-radius: 30px;
     margin-top: 10px;
+    width: 40px;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     background: blue;
+    height: 40px;
 }
 .fav .fa{
 	font-size: 14px;
@@ -321,7 +323,7 @@
 	display: inline-block;
 }
 .rows{
-	display: block;
+	display: flex;
     font-size: 13px;
     color: #f7f9fc;
     margin: 13px;
@@ -420,7 +422,7 @@
 			.detail{
 				display: flex;
 			    justify-content: space-evenly;
-			    width: 300px;
+			    width: 100%;
 			}
 		</style>
 	</head>
@@ -693,17 +695,19 @@ window.onload = function(e){
 							<img src="${item.imageUrl}" alt="cover">
 						</div>
 						<div class="rows">
-							${item.itemName}     Kshs ${item.itemPrice} /=
+							Item: ${item.itemName}     
+							Price: Kshs ${item.itemPrice} 
+							Quantity: ${CARTCHECKOUT.contents[i].quantity}
+						</div>
 							<div class="detail">
 								<button class="btn button increment" data-id="${item.itemId}" id="${item.itemId}">
 									+
 								</button>
-								<span class="quantity">${CARTCHECKOUT.contents[i].quantity}</span>
 								<button class="btn button decrement" data-id="${item.itemId}" id="${item.itemId}">
 									-
 								</button>
 								<button class="btn delete-from-checkout" data-id="${item.itemId}" id="${item.itemId}">
-									Remove
+									R
 								</button>
 							</div>
 						</div>	
